@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/travelPath.css}"/>
+
+</head>
+<body>
+<div id="mainDiv">
+    <!-- 顶部图片 -->
+    <div style="width: 100%;">
+        <img th:src="@{/img/head1.jpg}" style="width: 100%;"/>
+    </div>
+
+    <div id="nav">
+        <ul class="nav nav-pills">
+            <li role="presentation"><a th:href="@{/covid19}">国内疫情</a></li>
+            <li role="presentation"><a th:href="@{/nav/wordVirus}">国外疫情</a></li>
+            <li role="presentation"><a th:href="@{/nav/realMsg}">实时播报</a></li>
+            <li role="presentation"><a th:href="@{/nav/virusKp}">疫情科普</a></li>
+            <li role="presentation" class="active"><a th:href="@{/nav/track}">行程轨迹</a></li>
+            <li role="presentation"><a th:href="@{/nav/nearbyMap}">周边疫情</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="crd-title">
+            <font size="6" color="">新冠肺炎患者行程轨迹</font>
+        </div>
+        <div class="seacher">
+            <form class="form-inline">
+                <div class="form-group">
+                    <select class="form-control" id="province">
+                        <option>全国</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="city">
+                        <option>全部</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="country">
+                        <option>全部</option>
+                    </select>
+                </div>
+            </form>
+            <button  class="btn btn-default seacherBtn">查询</button>
+        </div>
+        <div class="resultBox">
+
+        </div>
+        <div class="more">
+            <a href="javascript:void(0);">查看更多</a>
+        </div>
+    </div>
+</div>
+
+
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/ChinaProvince.js}"></script>
+<script th:src="@{/js/travePath.js}"></script>
+<script th:src="@{/js/flexible.js}"></script>
+
+</body>
+</html>

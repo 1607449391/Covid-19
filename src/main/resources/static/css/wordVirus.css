@@ -1,0 +1,142 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+a{
+	color: #000000;
+}
+li{
+	list-style: none;
+}
+#mainDiv{
+	height: 100%;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+
+#nav{
+	width: 16.8rem;
+	margin-top: 1px;
+	color: #000000;
+}
+.fixedTop{
+	position: fixed;
+	top: 0;
+	left: 15%;
+	z-index: 10;
+}
+
+.nav{
+	width: 100%;
+
+	background-color: silver;
+}
+.nav li{
+	width: 15%;
+}
+.nav li a{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-weight:bold;
+}
+#ChinaRealDataDiv{
+	width: 100%;
+	margin-top: 50px;
+}
+#crd-title{
+	width: 100%;
+	text-align: center;	
+}
+#updateTime{
+	margin-top: 20px;
+}
+#ChinaRealData{
+	width: 100%;
+	border: 1px silver solid;
+	border-radius: 10px;
+}
+.row{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.row-data{
+	width: 25%;
+	text-align: center;
+}
+.row-last{
+	margin-bottom: 0.25rem;
+}
+
+i{
+	display: inline-block;
+	width: 6px;
+	height: 20px;
+	margin-right: 10px;
+	vertical-align: middle;
+	background: #4169e2;
+}
+p{
+	font-weight: 500;
+	font-size: 25px;
+}
+.mapBox{
+	width: 100%;
+	height: 15rem;
+}
+.mapPanal{
+	width: 15rem;
+	height: 15rem;
+}
+	
+.lineBox{
+	width: 100%;
+	margin-top: 0.25rem;
+	margin-bottom: 0.125rem;
+}
+#confirm{
+	width: 50%;
+	height: 450px;
+	float: left;
+}
+#heal{
+	width: 50%;
+	height: 450px;
+	float: left;
+}
+#dead{
+	width: 50%;
+	height: 450px;
+	float: left;
+}
+#rate{
+	width: 50%;
+	height: 450px;
+	float: left;
+}
+.lineStyle{
+	width: 15rem;
+	height: 8rem;
+}
+
+#provinceData>ul>li{
+				list-style: none;
+}
+#provinceData>ul>li>span{
+	display: inline-block;
+	width: 16%;
+	height: 30px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+}
+#provinceData>ul>li>span:first{
+	background-color: red;
+}
+
+
+
+
+
+

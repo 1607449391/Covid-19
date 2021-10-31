@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjq.covid19.mapper.WordDataSpiderMapper">
+
+    <!--public void  insertWordHistData(List<WordHistoryData> list);-->
+    <insert id="insertWordHistData" parameterType="java.util.List">
+        insert into wordHistoryData(
+        dateId,confirm,suspect,dead,heal,confirm_inc,suspect_inc,dead_inc,heal_inc,dead_rate,heal_rate)
+        VALUES 
+        <foreach collection="list" item="word" open="(" separator="),(" close=")">
+            #{word.dateId},#{word.confirm},#{word.suspect},#{word.dead},
+            #{word.heal},#{word.confirmInc},#{word.suspectInc},#{word.deadInc},
+            #{word.healInc},#{word.deadRate},#{word.healRate}
+        </foreach>
+    </insert>
+
+</mapper>

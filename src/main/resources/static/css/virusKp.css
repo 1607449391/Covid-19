@@ -1,0 +1,130 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+li{
+	list-style: none;
+}
+#mainDiv{
+	height: 100%;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+
+#nav{
+	width: 16.8rem;
+	margin-top: 1px;
+}
+.fixedTop{
+	position: fixed;
+	top: 0;
+	left: 15%;
+	z-index: 10;
+}
+
+.nav{
+	width: 100%;
+
+	background-color: silver;
+}
+.nav li{
+	width: 15%;
+}
+.nav li a{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-weight:bold;
+	text-decoration: none;
+	color: #000000;
+}
+
+.introduce::before{
+	content: "";
+	display: block;
+	width: 9px;
+	height: 30px;
+	background-color: #3343ff;
+	position: relative;
+	top: 48px;
+	left: -10px;
+}
+.pic{
+	float: right;
+}
+.pic img{
+	width: 6.25rem;
+	height: 6.25rem;
+}
+.encyclopedias p{
+	font-size: 0.3125rem;
+	line-height: 40px;		/* 行间距 */
+	letter-spacing: 2px; /* 字间距 */
+}
+.attentionList::before{
+	content: "";
+	display: block;
+	width: 9px;
+	height: 30px;
+	background-color: #3343ff;
+	position: relative;
+	top: 48px;
+	left: -10px;
+}
+.attention{
+	width: 100%;
+	height: 2.5rem;
+	padding-left: 10px;
+	border-radius: 10px;
+	box-shadow:  0.125rem 0.125rem 0.0625rem #888888;
+	margin-bottom: 30px;
+}
+.left{
+	float: left;
+}
+.left img{
+	width: 130px;
+	height: 130px;
+	border-radius: 5px;
+}
+.right{
+	padding-left: 150px;
+	padding-right: 20px;
+}
+.message p{
+	font-size: 15px;
+	color: #666666;
+}
+.link span{
+	margin-top: 25px;
+	float: right;
+	font-size: 15px;
+}
+.self-protect::before{
+	content: "";
+	display: block;
+	width: 9px;
+	height: 30px;
+	background-color: #3343ff;
+	position: relative;
+	top: 48px;
+	left: -10px;
+}
+	
+.tip{
+	width: 1.375rem;
+	border-radius: 3px;
+	font-size: 18px;
+	margin-top: 0.25rem
+	color:white;
+	background-color: #1fb4ff;
+}
+	
+.tip p{
+	color: white;
+}
+.tip-bx{
+	background-color: #00c5a4;
+}

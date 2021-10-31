@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/showProvince.css}" />
+	</head>
+	<body>
+		<div id="mainDiv">
+
+			<div class="title">
+				<h2 th:text="${province.provinceName+'疫情分布'}"></h2>
+			</div>
+			<div id="provinceRealData">
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data row-border">
+						<div id="nowConfirm">
+							<font size="6" color="#FF6600;" th:text="${province.nowConfirm}"><strong>1489</strong></font><br />
+							<b>&nbsp;&nbsp;&nbsp;现存确诊</b>
+						</div>
+						
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data row-border">
+						<div id="importCase">
+							<font size="6" color="#FFA500" th:text="${province.confirm}"><b>1489</b></font><br />
+							<b>&nbsp;&nbsp;&nbsp;累计确诊</b>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data row-border">
+						<div id="noInfect">
+							<font size="6" color="#990000;" th:text="${province.dead}"><b>1489</b></font><br />
+							<b>&nbsp;死亡人数</b>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data">
+						<div id="suspect">
+							<font size="6" color="#CC00FF;" th:text="${province.heal}"><b>1489</b></font><br />
+							<b>&nbsp;&nbsp;&nbsp;治愈人数</b>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<hr />
+			<p><i></i>疫情地图</p>
+			<div id="provinceMap">
+			</div>
+			
+			<p><i></i>疫情统计</p>
+			<div id="provinceLine">
+			</div>
+			
+			<p><i></i>各市确诊情况</p>
+			<div class="cityRealData">
+				<table border="" cellspacing="" cellpadding="10">
+					<tr>
+						<th>地区</th>
+						<th>现存确诊</th>
+						<th>累计确诊</th>
+						<th>新增确诊</th>
+						<th>死亡</th>
+						<th>治愈</th>
+					</tr>
+					<tr th:each="prov:${province.children}">
+						<td th:text="${prov.provinceName}"></td>
+						<td th:text="${prov.nowConfirm}"></td>
+						<td th:text="${prov.confirm}"></td>
+						<td th:text="${prov.addConfirm}"></td>
+						<td th:text="${prov.dead}"></td>
+						<td th:text="${prov.heal}"></td>
+					</tr>
+				</table>
+			</div>
+			<input type="hidden" id="children" th:value="${province.children}" />
+			<input type="hidden" id="name" th:value="${province.provinceName}" />
+		</div>
+		<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+		<script th:src="@{/js/echarts.min.js}"></script>
+		<script th:src="@{/js/flexible.js}"></script>
+		<script th:src="@{/js/province/{provinceJs}(provinceJs=${provinceJs})}"></script>
+		<script th:src="@{/js/showProvince.js}"></script>
+		
+	</body>
+</html>

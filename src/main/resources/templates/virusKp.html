@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/virusKp.css}" />
+
+		
+	</head>
+	<body>
+		<div id="mainDiv">
+			<!-- 顶部图片 -->
+			<div style="width: 100%;">
+				<img src="../img/head1.jpg" style="width: 100%;" />
+			</div>
+
+			<div id="nav">
+				<ul class="nav nav-pills">
+					<li role="presentation"><a  th:href="@{/covid19}">国内疫情</a></li>
+					<li role="presentation"><a th:href="@{/nav/wordVirus}">国外疫情</a></li>
+					<li role="presentation"><a th:href="@{/nav/realMsg}">实时播报</a></li>
+					<li role="presentation" class="active"><a th:href="@{/nav/virusKp}">疫情科普</a></li>
+					<li role="presentation"><a th:href="@{/nav/track}">行程轨迹</a></li>
+					<li role="presentation"><a th:href="@{/nav/nearbyMap}">周边疫情</a></li>
+				</ul>
+			</div>
+			
+			
+			<div class="content">
+				<div class="introduce">
+					<h3><strong>病毒简介</strong></h3>
+					<div class="encyclopedias">				<!-- 文件简介 -->
+						<div class="pic">
+							<img src="../img/virus.jpg" >
+						</div>
+						<h2>新型冠状病毒肺炎</h2>
+						<p>
+							新型冠状病毒肺炎（Corona Virus Disease 2019，COVID-19），简称“新冠肺炎”，世界卫生组织命名
+							为“2019冠状病毒病” ，是指2019新型冠状病毒感染导致的肺炎。2019年12月以来，湖北省武汉市
+							部分医院陆续发现了多例有华南海鲜市场暴露史的不明原因肺炎病例，证实为2019新型冠状病毒感染引起的急性
+							呼吸道传染病。
+							2020年2月11日，世界卫生组织总干事谭德塞在瑞士日内瓦宣布，将新型冠状病毒感染的肺炎命名为“COVID-19”
+							   。2月22日，国家卫生健康委发布通知，“新型冠状病毒肺炎”英文名称修订为“COVID-19” 。
+							 3月11日，世卫组织认为当前新冠肺炎疫情可被称为全球大流行   。4月4日，中国举行全国性哀悼活动 
+							   。8月18日，国家卫健委修订完成了新型冠状病毒肺炎诊疗方案（试行第八版） 。9月3日，
+							 世卫组织新冠肺炎疫情应对评估专家组共同主席在成员国吹风会上宣布了专家组成员名单，钟南山入选。
+
+						</p>
+					</div>
+					<div class="videoBox">
+						<video width="100%" height=""  controls>
+							<source src="../video/yiqingkepu.mp4" type="video/mp4"></source>
+							<source src="../video/yiqingkepu.mp4" type="video/ogg"></source>
+							<source src="../video/yiqingkepu.mp4" type="video/webm"></source>
+							<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+								<param name="movie" value="myvideo.swf" />
+								<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+							</object>
+							当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+						</video>
+					</div>
+					
+				</div>
+				
+				<div class="attentionList">
+					<h3><strong>疫苗科普</strong></h3>
+					<div class="attentions">
+						<div class="attention">
+							<div class="left">
+								<img src="../img/ym1.jpg" >
+							</div>
+							<div class="right">
+								<div class="title">
+									<h3>新冠病毒疫苗是一种什么药？</h3>
+								</div>
+								<div class="message">
+									<p>接种后可刺激人体产生针对新型冠状病毒（2019-nCoV）的抗体，从而为受种者提供免疫保护，抵御新型冠状病毒感染人体或导致发病。</p>
+								</div>
+								<div class="link">
+									<span><a href="https://m.dxy.com/article/32793">查看详情</a></span>
+								</div>
+							</div>
+						</div>
+						<div class="attention">
+							<div class="left">
+								<img src="../img/ym2.jpg" >
+							</div>
+							<div class="right">
+								<div class="title">
+									<h3>所有人都能接种吗？</h3>
+								</div>
+								<div class="message">
+									<p>接种新冠病毒疫苗的效果如何？保护期有多久？可以和其他疫苗一起接种吗？</p>
+								</div>
+								<div class="link">
+									<span><a href="https://m.dxy.com/article/32794">查看详情</a></span>
+								</div>
+							</div>
+						</div>
+						<div class="attention">
+							<div class="left">
+								<img src="../img/ym3.jpg" >
+							</div>
+							<div class="right">
+								<div class="title">
+									<h3>新冠疫苗分几种？</h3>
+								</div>
+								<div class="message">
+									<p>不同疫苗种类的优缺点是什么？如何进行选择？</p>
+								</div>
+								<div class="link">
+									<span><a href="https://m.dxy.com/article/32795">查看详情</a></span>
+								</div>
+							</div>
+						</div>
+						<div class="attention">
+							<div class="left">
+								<img src="../img/ym4.jpg" >
+							</div>
+							<div class="right">
+								<div class="title">
+									<h3>新冠疫苗接种方法</h3>
+								</div>
+								<div class="message">
+									<p>新冠病毒疫苗接种频率？剂次？每次间隔多久？</p>
+								</div>
+								<div class="link">
+									<span><a href="https://m.dxy.com/article/32797">查看详情</a></span>
+								</div>
+							</div>
+						</div>
+						<div class="attention">
+							<div class="left">
+								<img src="../img/ym5.jpg" >
+							</div>
+							<div class="right">
+								<div class="title">
+									<h3>疫苗不良反应</h3>
+								</div>
+								<div class="message">
+									<p>接种新冠病毒疫苗可能出现哪些不良反应？如何处理？</p>
+								</div>
+								<div class="link">
+									<span><a href="https://m.dxy.com/article/32798">查看详情</a></span>
+								</div>
+							</div>
+						</div>
+						<div class="attention">
+							<div class="left">
+								<img src="../img/ym6.jpg" >
+							</div>
+							<div class="right">
+								<div class="title">
+									<h3>紧急上市的研发流程</h3>
+								</div>
+								<div class="message">
+									<p>国内疫苗的研发和上市进度怎么判断？</p>
+								</div>
+								<div class="link">
+									<span><a href="https://m.dxy.com/article/32796">查看详情</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<div class="self-protect">
+					<h3><strong>自我防护</strong></h3>
+					<div class="attention">
+						<div class="left">
+							<img src="../img/yf1.jpg" >
+						</div>
+						<div class="right">
+							<div class="title">
+								<h2>预防肺炎戴过的口罩该怎么处理？</h2>
+							</div>
+							<div class="tip">
+								<p>如何预防</p>
+							</div>
+							<div class="link">
+								<span><a href="https://mdeer.taobao.com/guide/h5/science/article/168116?pos=15&acm=202002125.1003.2.7340021&scm=1003.2.202002125.OTHER_1584751355131_7340021&popup=true&spm=a2o11a.13937218.prevent.0&isextonly=1">查看详情</a></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="attention">
+						<div class="left">
+							<img src="../img/yf2.jpg" >
+						</div>
+						<div class="right">
+							<div class="title">
+								<h2>中国疾控中心：做到这六条预防冠状病毒</h2>
+							</div>
+							<div class="tip">
+								<p>如何预防</p>
+							</div>
+							<div class="link">
+								<span><a href="https://mdeer.taobao.com/guide/h5/science/article/168105?pos=9&acm=202002125.1003.2.7340021&scm=1003.2.202002125.OTHER_1586400714792_7340021&popup=true&spm=a2o11a.13937218.prevent.1&isextonly=1">查看详情</a></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="attention">
+						<div class="left">
+							<img src="../img/yf3.jpg" >
+						</div>
+						<div class="right">
+							<div class="title">
+								<h2>中国疾控中心：新型肺炎个人防控指南</h2>
+							</div>
+							<div class="tip">
+								<p>如何预防</p>
+							</div>
+							<div class="link">
+								<span><a href="https://mdeer.taobao.com/guide/h5/science/article/168106?pos=10&acm=202002125.1003.2.7340021&scm=1003.2.202002125.OTHER_1585976526899_7340021&popup=true&spm=a2o11a.13937218.prevent.2&isextonly=1">查看详情</a></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="attention">
+						<div class="left">
+							<img src="../img/yf4.jpg" >
+						</div>
+						<div class="right">
+							<div class="title">
+								<h2>记住3句就医建议</h2>
+							</div>
+							<div class="tip tip-bx">
+								<p>症状表现</p>
+							</div>
+							<div class="link">
+								<span><a href="https://mdeer.taobao.com/guide/h5/science/article/167752?pos=11&acm=202002124.1003.2.7340026&scm=1003.2.202002124.OTHER_1585578382215_7340026&popup=true&spm=a2o11a.13937218.symptom.3&isextonly=1">查看详情</a></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="attention">
+						<div class="left">
+							<img src="../img/yf5.jpg" >
+						</div>
+						<div class="right">
+							<div class="title">
+								<h2>中国疾控中心：新冠肺炎家庭预防指南</h2>
+							</div>
+							<div class="tip">
+								<p>如何预防</p>
+							</div>
+							<div class="link">
+								<span><a href="https://mdeer.taobao.com/guide/h5/science/article/168101?pos=11&acm=202002125.1003.2.7340021&scm=1003.2.202002125.OTHER_1585523008383_7340021&popup=true&spm=a2o11a.13937218.prevent.4&isextonly=1">查看详情</a></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="attention">
+						<div class="left">
+							<img src="../img/yf6.jpg" >
+						</div>
+						<div class="right">
+							<div class="title">
+								<h2>中国疾控中心：公共场所预防指南</h2>
+							</div>
+							<div class="tip">
+								<p>如何预防</p>
+							</div>
+							<div class="link">
+								<span><a href="https://mdeer.taobao.com/guide/h5/science/article/168099?pos=12&acm=202002125.1003.2.7340021&scm=1003.2.202002125.OTHER_1585997710692_7340021&popup=true&spm=a2o11a.13937218.prevent.5&isextonly=1">查看详情</a></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="attention">
+						<div class="left">
+							<img src="../img/yf7.jpg" >
+						</div>
+						<div class="right">
+							<div class="title">
+								<h2>出现这五类症状，应高度警惕新型肺炎</h2>
+							</div>
+							<div class="tip tip-bx">
+								<p>症状表现</p>
+							</div>
+							<div class="link">
+								<span><a href="https://mdeer.taobao.com/guide/h5/science/article/168110?pos=10&acm=202002124.1003.2.7340026&scm=1003.2.202002124.OTHER_1584387474548_7340026&popup=true&spm=a2o11a.13937218.symptom.6&isextonly=1">查看详情</a></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="attention">
+						<div class="left">
+							<img src="../img/yf8.jpg" >
+						</div>
+						<div class="right">
+							<div class="title">
+								<h2>防范新型冠状病毒48字守则</h2>
+							</div>
+							<div class="tip">
+								<p>如何预防</p>
+							</div>
+							<div class="link">
+								<span><a href="https://mdeer.taobao.com/guide/h5/science/article/168111?pos=13&acm=202002125.1003.2.7340021&scm=1003.2.202002125.OTHER_1582716588744_7340021&popup=true&spm=a2o11a.13937218.prevent.7&isextonly=1">查看详情</a></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="attention">
+						<div class="left">
+							<img src="../img/yf9.jpg" >
+						</div>
+						<div class="right">
+							<div class="title">
+								<h2>如何正确挑选口罩？</h2>
+							</div>
+							<div class="tip">
+								<p>如何预防</p>
+							</div>
+							<div class="link">
+								<span><a href="https://mdeer.taobao.com/guide/h5/science/article/167748?pos=14&acm=202002125.1003.2.7340021&scm=1003.2.202002125.OTHER_1583197039650_7340021&popup=true&spm=a2o11a.13937218.prevent.9&isextonly=1">查看详情</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		<script th:src="@{/js/jquery-3.3.1.min.js}" ></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/flexible.js}"></script>
+	
+	</body>
+</html>

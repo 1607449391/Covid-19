@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Title</title>
+    <style type="text/css">
+        html{height:100%}
+        body{height:100%;margin:0px;padding:0px}
+        #container{height:80%}
+    </style>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/nearbyMap.css}" />
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=vWsQFfCYmFlV06IL6VX3B3xYBuXKzYsS"></script>
+    <link rel="stylesheet" href="//api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+</head>
+
+<body>
+    <div class="SearchBox" style="height:50px;">
+        <div class="seacherDiv">
+            <input type="text" style="width: 500px" class="form-control" id="seacher" placeholder="输入详细地址(xx省xx市xx)，快速定位">
+        </div>
+        <div class="btn">
+            <button type="button" id="seacherBtn" class="btn btn-primary">搜索</button>
+        </div>
+        <div class="btn">
+            <button type="button" id="desiHospital" class="btn btn btn-info">定点医院</button>
+        </div>
+        <div class="btn">
+            <button type="button" id="feverClinic" class="btn btn btn-info">发热门诊</button>
+        </div>
+        <div class="btn">
+            <button type="button" id="nucleicTest" class="btn btn btn-info">核酸检测</button>
+        </div>
+
+    </div>
+    <div id="container">
+    </div>
+    <div id="tipBox">
+
+    </div>
+
+    <script th:src="@{/js/jquery-3.3.1.min.js}" ></script>
+    <script th:src="@{/js/bootstrap.min.js}" ></script>
+    <script th:src="@{/js/flexible.js}"></script>
+    <script th:src="@{/js/LatAndLng.js}"></script>
+    <script th:src="@{/js/nearbyMap.js}"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+	color: #000000;
+}
+li{
+	list-style: none;
+}
+h1{
+	margin-top:1.25rem;
+	margin-left: 5.5rem;
+}
+#mainDiv{
+	height: 100%;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+
+#nav{
+	width: 16.8rem;
+	margin-top: 1px;
+}
+.fixedTop{
+	position: fixed;
+	top: 0;
+	left: 15%;
+	z-index: 10;
+}
+
+.nav{
+	width: 100%;
+
+	background-color: silver;
+}
+.nav li{
+	width: 15%;
+}
+.nav li a{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-weight:bold;
+}
+.content{
+	width: 100%;
+}
+.seacher{
+	width: 95%;
+	margin-top: 0.375rem;
+	margin-left: 0.375rem;
+	text-align: center;
+}
+
+#crd-title{
+	margin-top: 0.225rem;
+	width: 100%;
+	text-align: center;	
+}
+.seacherBtn{
+	display: inline-block;
+
+}
+.resultBox{
+	background-color: #f4f4f4;
+	margin-top: 0.375rem;
+	width: 100%;
+	
+}
+.result{
+	margin-top: 0.45rem;
+	margin-left: 4.0rem;
+	width: 8.25rem;
+	background-color: #FFFFFF;
+	border-radius: 0.25rem;
+}
+.location{
+	padding-top: 0.25rem;
+}
+.info{
+	padding-left: 0.625rem;
+	padding-top: 0.125rem;
+}
+.info>img{
+	width: 0.4rem;
+	height: 0.44rem;
+}
+.track{
+	margin-top: 0.025rem;
+	border-left: 3px silver dotted;
+}
+	
+.track::before{
+	display: block;
+	content: "";
+	background: url(../img/date-point.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 0.18rem;
+	height: 0.1815rem;
+	position: relative;
+	top: 0.225rem;
+	left: -0.11rem;
+	box-sizing: inherit;
+	
+}
+.track::after{
+	content: "";
+	
+	background-image: url(../img/date-line.png);
+	background-repeat: repeat-y;
+	background-size: 0.04rem 0.12rem;
+	box-sizing: inherit;
+	
+}
+
+.day{
+	margin-left: 0.525rem;
+	float: left;
+	height: 100%;
+}
+.day>span{
+	font-size: 0.25rem;
+	font-weight: bold;
+	color: #f50202;
+	display: inline-block;
+	background-color: #ffc5c9;
+	border-radius: 0.25rem;
+}
+.tk-info{
+	margin-left: 1.875rem;
+	margin-right: 0.125rem;
+}
+.source{
+	margin-top: 0.375rem;
+}
+.more{
+	text-align: center;
+}
+.more a{
+	font-size: 20px;
+	color: #0000FF;
+	text-decoration: none;
+}
+.showFlag{
+	display: none;
+}

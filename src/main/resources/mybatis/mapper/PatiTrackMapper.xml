@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjq.covid19.mapper.PatiTrackMapper">
+    <select id="getIndexData" resultType="com.xjq.covid19.bean.PatientTrack">
+        SELECT * FROM patientTracks LIMIT #{start},#{pageSize};
+    </select>
+
+    <select id="getSeacherData" resultType="com.xjq.covid19.bean.PatientTrack">
+        SELECT * FROM patientTracks
+        WHERE 1=1
+        <if test="province != '全国' and province != null">
+            and province = #{province}
+        </if>
+        <if test="city != '全部' and city != null">
+            and city = #{city}
+        </if>
+        <if test="country != '全部' and country != null">
+            and county = #{country}
+        </if>
+         LIMIT #{start},#{pageSize};
+    </select>
+
+</mapper>

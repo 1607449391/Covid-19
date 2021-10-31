@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/indexCss.css}" />
+		
+	</head>
+	<body>
+		<div id="mainDiv">
+			<!-- 顶部图片 -->
+			<div style="width: 100%;">
+				<img th:src="@{/img/head1.jpg}" style="width: 100%;" />
+			</div>
+			
+			<div id="nav">
+				<ul class="nav nav-pills">
+				  <li role="presentation" class="active"><a  th:href="@{/covid19}">国内疫情</a></li>
+				  <li role="presentation"><a th:href="@{/nav/wordVirus}">国外疫情</a></li>
+				  <li role="presentation"><a th:href="@{/nav/realMsg}">实时播报</a></li>
+				  <li role="presentation"><a th:href="@{/nav/virusKp}">疫情科普</a></li>
+				  <li role="presentation"><a th:href="@{/nav/track}">行程轨迹</a></li>
+				  <li role="presentation"><a th:href="@{/nav/nearbyMap}">周边疫情</a></li>
+				</ul>
+			</div>
+			<div id="ChinaRealDataDiv">
+				<div id="crd-title">
+					<font size="6" color="">国内疫情实时数据</font>	
+				</div>
+				<div id="updateTime">
+					<font size="4" color="#666666" th:text="'截至北京时间 '+${chinaRealTotalData.date}"></font>
+				</div>
+				<div id="ChinaRealData">
+					<div class="row">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data row-border">
+							<div id="nowConfirm">
+								<b>&nbsp;&nbsp;&nbsp;较昨日<em th:text="${chinaRealAddData.nowConfirm>=0?'+':''}"></em><em style="color: rgb(247, 76, 49);" th:text="${chinaRealAddData.nowConfirm}">-51</em></b><br />
+								<font size="6" color="#FF6600;" th:text="${chinaRealTotalData.nowConfirm}"><strong>1489</strong></font><br />
+								<b>&nbsp;&nbsp;&nbsp;现存确诊</b>
+							</div>
+							
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data row-border">
+							<div id="importCase">
+								<b>&nbsp;&nbsp;&nbsp;较昨日<em th:text="${chinaRealAddData.importedCase>=0?'+':''}"></em><em style="color: rgb(247, 130, 7);" th:text="${chinaRealAddData.importedCase}">-51</em></b><br />
+								<font size="6" color="#FFA500" th:text="${chinaRealTotalData.importedCase}"><b>1489</b></font><br />
+								<b>&nbsp;&nbsp;&nbsp;境外输入</b>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data row-border">
+							<div id="noInfect">
+								<b>&nbsp;&nbsp;&nbsp;较昨日<em th:text="${chinaRealAddData.noInfect>=0?'+':''}"></em><em style="color: rgb(162, 90, 78);" th:text="${chinaRealAddData.noInfect}">-51</em></b><br />
+								<font size="6" color="#990000;" th:text="${chinaRealTotalData.noInfect}"><b>1489</b></font><br />
+								<b>&nbsp;现存无症状</b>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data">
+							<div id="suspect">
+								<b>&nbsp;&nbsp;&nbsp;较昨日<em th:text="${chinaRealAddData.suspect>=0?'+':''}"></em><em style="color: rgb(162, 90, 78);" th:text="${chinaRealAddData.suspect}">-51</em></b><br />
+								<font size="6" color="#CC00FF;" th:text="${chinaRealTotalData.suspect}"><b>1489</b></font><br />
+								<b>&nbsp;&nbsp;&nbsp;疑似感染</b>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row row-last">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data row-border">
+							<div id="nowConfirm">
+								<b>&nbsp;&nbsp;&nbsp;较昨日<em th:text="${chinaRealAddData.confirm>=0?'+':''}"></em><em style="color: rgb(247, 76, 49);" th:text="${chinaRealAddData.confirm}">-51</em></b><br />
+								<font size="6" color="#FF6600;" th:text="${chinaRealTotalData.confirm}"><b>1489</b></font><br />
+								<b>&nbsp;&nbsp;&nbsp;确诊总数</b>
+							</div>
+							
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data row-border">
+							<div id="importCase">
+								<b>&nbsp;&nbsp;&nbsp;较昨日<em th:text="${chinaRealAddData.dead>=0?'+':''}"></em><em style="color: rgb(247, 130, 7);" th:text="${chinaRealAddData.dead}">-51</em></b><br />
+								<font size="6" color="#FFA500" th:text="${chinaRealTotalData.dead}"><b>1489</b></font><br />
+								<b>&nbsp;&nbsp;&nbsp;死亡人数</b>
+							</div>
+							
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data row-border">
+							<div id="noInfect">
+								<b>&nbsp;&nbsp;&nbsp;较昨日<em th:text="${chinaRealAddData.heal>=0?'+':''}"></em><em style="color: rgb(162, 90, 78);" th:text="${chinaRealAddData.heal}">-51</em></b><br />
+								<font size="6" color="#990000;" th:text="${chinaRealTotalData.heal}"><b>1489</b></font><br />
+								<b>&nbsp;治愈人数</b>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 row-data">
+							<div id="suspect">
+								<b>&nbsp;&nbsp;&nbsp;较昨日<em th:text="${chinaRealAddData.suspect>=0?'+':''}"></em><em style="color: rgb(162, 90, 78);" th:text="${chinaRealAddData.suspect}">-51</em></b><br />
+								<font size="6" color="#CC00FF;" th:text="${chinaRealTotalData.suspect}"><b>1489</b></font><br />
+								<b>&nbsp;&nbsp;&nbsp;疑似感染</b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<p><i></i>国内疫情地图</p>
+			
+			<div class="mapDiv">
+				<div class="row">
+					<div id="nowServer" class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+						<a href="JavaScript:void(0)" class="btn btn-default  active" role="button">现存确诊</a>
+					</div>
+					<div id="confirmTotal" class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+						<a href="JavaScript:void(0)" class="btn btn-default" role="button">累计确诊</a>
+					</div>
+				</div>
+				<div id="" class="mapBox">
+					<div id="chinaMap" class="mapPanal">
+					</div>
+				</div>
+			</div>
+			
+			<p><i></i>国内疫情趋势</p>
+			<div class="lineDiv">
+				<div class="lineBox">
+					<div id="everyDayAdd" class="lineStyle">	
+					</div>
+				</div>
+				<div class="lineBox">
+					<div id="dataTotal" class="lineStyle">
+						
+					</div>
+				</div>
+			</div>
+
+			<p><i></i>现存确诊分布</p>
+			<div class="barDiv">
+				<div id="NowCofTotalBar">
+
+				</div>
+				<div id="CofirmAddBar">
+
+				</div>
+
+			</div>
+
+			<p><i></i>排名TOP5</p>
+			<div class="pieDiv">
+				<div id="confirmTotalPie">
+
+				</div>
+				<div id="healRatePie">
+
+				</div>
+			</div>
+
+			<p><i></i>省市疫情展示</p>
+			<input id = "proRealData" type="hidden" th:value="${provRealData}">
+			<div id="provinceData" style="background-color:#F5F5F5;">
+				<ul>
+					<li>
+						<span>地区</span>
+						<span>现存确诊</span>
+						<span>累计确诊</span>
+						<span>死亡</span>
+						<span>治愈</span>
+						<span>疫情</span>
+					</li>
+
+					<li th:each="provData:${provRealData}">
+						<span>
+						 <img th:src="@{/img/open.png}" class="prov_img_close" th:text="${provData.provinceName}"></span>
+						<span th:text="${provData.nowConfirm}"></span>
+						<span th:text="${provData.confirm}"></span>
+						<span th:text="${provData.dead}"></span>
+						<span th:text="${provData.heal}"></span>
+						<span><a class="more" th:href="@{/showProvince(provinceName=${provData.provinceName})}">详情</a></span>
+						<ul class="city">
+							<li th:if="${provData.children != null}" th:each="prov:${provData.children}">
+								<span th:text="${prov.provinceName}"></span>
+								<span th:text="${prov.nowConfirm}"></span>
+								<span th:text="${prov.confirm}"></span>
+								<span th:text="${prov.dead}"></span>
+								<span th:text="${prov.heal}"></span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		<script th:src="@{/js/jquery-3.3.1.min.js}" ></script>
+		<script th:src="@{/js/bootstrap.min.js}" ></script>
+		<script th:src="@{/js/flexible.js}"></script>
+		<script th:src="@{/js/echarts.min.js}"></script>
+		<script th:src="@{/js/china.js}"></script>
+		<script th:src="@{/js/index.js}"></script>
+	</body>
+</html>

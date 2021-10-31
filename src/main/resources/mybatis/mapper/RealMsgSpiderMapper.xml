@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjq.covid19.mapper.RealMsgSpiderMapper">
+    <insert id="insertWYMessage" parameterType="java.util.List">
+        insert into realMessage(time,title,content,source,url)
+        VALUES
+        <foreach collection="list" item="msg" open="(" separator="),(" close=")">
+           #{msg.time},#{msg.title},"","",#{msg.url}
+        </foreach>
+    </insert>
+   <!-- public void insertDXYMessage(List<Message> list);-->
+    <insert id="insertDXYMessage" parameterType="java.util.List">
+        insert into realMessage(time,title,content,source,url)
+        VALUES
+        <foreach collection="list" item="msg" open="(" separator="),(" close=")">
+            #{msg.time},#{msg.title},#{msg.content},#{msg.source},""
+        </foreach>
+    </insert>
+    <!--public void insertALIMessage(List<Message> list);-->
+    <insert id="insertALIMessage" parameterType="java.util.List">
+        insert into realMessage(time,title,content,source,url)
+        VALUES
+        <foreach collection="list" item="msg" open="(" separator="),(" close=")">
+            #{msg.time},#{msg.title},#{msg.content},#{msg.source},""
+        </foreach>
+    </insert>
+   <!-- public void insertSGMessage(List<Message> list);-->
+    <insert id="insertSGMessage" parameterType="java.util.List">
+        insert into realMessage(time,title,content,source,url)
+        VALUES
+        <foreach collection="list" item="msg" open="(" separator="),(" close=")">
+            #{msg.time},#{msg.title},#{msg.content},#{msg.source},#{msg.url}
+        </foreach>
+    </insert>
+</mapper>

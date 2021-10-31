@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjq.covid19.mapper.ChinaDataSpiderMapper">
+
+    <insert id="insertChinaHistoryData" parameterType="java.util.List">
+        INSERT into chinaHistoryData(
+        dataId,confirm,nowSevere,infect,healRate,heal,
+        importedCase,dead,nowConfirm,suspect,deadRate)
+        VALUES
+        <foreach collection="list" item="item" open="(" separator="),(" close=")">
+            #{item.dataId},#{item.confirm},#{item.nowSevere},#{item.noInfect},#{item.healRate},
+            #{item.heal},#{item.importedCase},#{item.dead},#{item.nowConfirm},#{item.suspect},
+            #{item.deadRate}
+        </foreach>
+    </insert>
+
+    <insert id="insertChinaDayAdd" parameterType="java.util.List">
+        INSERT  into chinaDayAdd(
+        dataId,confirm,suspect,dead,heal,
+        importedCase,infect,deadRate,healRate)
+        VALUES
+        <foreach collection="list" item="item" open="(" separator="),(" close=")">
+            #{item.dataId},#{item.confirm},#{item.suspect},#{item.dead},#{item.heal},
+            #{item.importedCase},#{item.infect},#{item.deadRate},#{item.healRate}
+        </foreach>
+    </insert>
+
+    <!--//插入昨天疫情数据
+    public  void insertYesterdayData(ChinaHistoryData chd);-->
+    <insert id="insertYesterdayData" parameterType="com.xjq.covid19.bean.ChinaData">
+        INSERT into chinaHistoryData(
+        dataId,confirm,nowSevere,infect,healRate,heal,
+        importedCase,dead,nowConfirm,suspect,deadRate)
+        VALUES(
+            #{dataId},#{confirm},#{nowSevere},#{noInfect},#{healRate},
+            #{heal},#{importedCase},#{dead},#{nowConfirm},#{suspect},
+            #{deadRate})
+    </insert>
+
+   <!-- //插入昨天疫情增长数据
+    public void insertYesterdayAddData(ChinaHistoryData chd);-->
+
+    <insert id="insertYesterdayAddData" parameterType="com.xjq.covid19.bean.ChinaData">
+        INSERT  into chinaDayAdd(
+        dataId,confirm,suspect,dead,heal,
+        importedCase,infect,deadRate,healRate)
+        VALUES(
+            #{dataId},#{confirm},#{suspect},#{dead},#{heal},
+            #{importedCase},#{infect},#{deadRate},#{healRate})
+    </insert>
+</mapper>

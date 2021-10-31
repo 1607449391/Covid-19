@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/realMsg.css}"/>
+		
+	</head>
+	<body>
+		<div id="mainDiv">
+			<!-- 顶部图片 -->
+			<div style="width: 100%;">
+				<img th:src="@{/img/head1.jpg}" style="width: 100%;" />
+			</div>
+
+			<div id="nav">
+				<ul class="nav nav-pills">
+					<li role="presentation"><a  th:href="@{/covid19}">国内疫情</a></li>
+					<li role="presentation"><a th:href="@{/nav/wordVirus}">国外疫情</a></li>
+					<li role="presentation" class="active"><a th:href="@{/nav/realMsg}">实时播报</a></li>
+					<li role="presentation"><a th:href="@{/nav/virusKp}">疫情科普</a></li>
+					<li role="presentation"><a th:href="@{/nav/track}">行程轨迹</a></li>
+					<li role="presentation"><a th:href="@{/nav/nearbyMap}">周边疫情</a></li>
+				</ul>
+			</div>
+			
+			
+			<div class="content">
+				<div class="title">
+					<h2>疫情最新进展</h2>
+				</div>
+				<div class="realMsgList">
+					<div class="realMsg" th:each="message:${messages}">
+						<div class="time">
+							<font size="4" color="#666666" th:text="${#dates.format(message.time,'yyyy-MM-dd HH:mm:ss')}"></font>
+						</div>
+						<div class="msgBox">
+							<div class="message">
+								<h3 th:text="${message.title}"><strong></strong></h3>
+								<span th:if="${message.content != null}" th:text="${message.content}"></span>
+								<br><br>
+								<font th:if="${message.source != null}" th:text="${message.source}"></font>
+								<a th:if="${message.url != null}" th:href="${message.url}"><p>查看详细内容</p></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="more">
+					<a href="javascript:void(0);">查看更多</a>
+				</div>
+				
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/flexible.js}"></script>
+		<script th:src="@{/js/realMsg.js}"></script>
+	</body>
+</html>

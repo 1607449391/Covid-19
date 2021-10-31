@@ -1,0 +1,92 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+li{
+	list-style: none;
+}
+#mainDiv{
+	height: 100%;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+
+#nav{
+	width: 16.8rem;
+	margin-top: 1px;
+}
+.fixedTop{
+	position: fixed;
+	top: 0;
+	left: 15%;
+	z-index: 10;
+}
+
+.nav{
+	width: 100%;
+
+	background-color: silver;
+}
+.nav li{
+	width: 15%;
+}
+.nav li a{
+	width: 100%;
+	height: 100%;
+	color: #000000;
+	text-align: center;
+	font-weight:bold;
+}
+.title{
+	height: 0.625rem;
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.realMsgList{
+	border-left: 3px silver dotted;
+}
+.realMsg{
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
+.msgBox{
+	background-color: #f7f7f7;
+	margin-left: 20px;
+	border-radius: 30px;
+}
+.message{
+	padding: 15px;
+
+}
+.realMsg::before{
+	display: block;
+	content: "";
+	width: 15px;
+	height: 15px;
+	border-radius: 10px;
+	position: relative;
+	top: 19px;
+	left: -20px;
+	background-color: orange;
+}
+
+.message span{
+	font-size: 15px;
+	color: #666666;
+}
+.message p{
+	text-align: center;
+	font-size: 15px;
+	color: #999999;	
+}
+
+.more{
+	text-align: center;
+}
+.more a{
+	font-size: 20px;
+	text-decoration: none;
+}

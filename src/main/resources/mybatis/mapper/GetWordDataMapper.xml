@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjq.covid19.mapper.GetWordDataMapper">
+
+    <select id="getWordHisData" resultType="com.xjq.covid19.bean.WordData">
+       SELECT dateId,confirm,dead,heal,confirm_inc,dead_inc,heal_inc,dead_rate,heal_rate
+        from wordHistoryData;
+    </select>
+
+
+
+
+
+
+</mapper>
